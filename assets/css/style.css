@@ -1,0 +1,489 @@
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* fonts */
+
+/* Montserrat Black */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Inter Regular */
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Variáveis */
+
+:root {
+  --orange: #a27c53;
+  --blue: #3b82f6;
+  --dark-blue: #1e40af;
+  --gray: #1e293b;
+  --light: #cbd5e1;
+  --light-gray: #94a3b8;
+  --white: #f1f5e9;
+  --font: "Inter", sans-serif;
+  --display: "Montserrat", sans-serif;
+}
+
+/* Corpo do site */
+body {
+  background-image: linear-gradient(
+      135deg,
+      rgba(224, 242, 254, 0) 0%,
+      rgba(247, 250, 252, 0) 100%
+    ),
+    url("../images/imagens-dev-cibersec.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: var(--font);
+  color: #334155;
+}
+
+.wrapper {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1080px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+}
+
+/* Links */
+a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover,
+a:focus {
+  color: var(--dark-blue);
+  outline: none;
+}
+
+/* Cabeçalho */
+header {
+  background: var(--gray);
+  color: var(--white);
+  padding: 1.5rem 0;
+  box-shadow: 0 4px 15px rgba(30, 41, 59, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: 0.12rem;
+  user-select: none;
+  font-family: var(--display);
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+nav a:focus,
+nav a:hover {
+  color: var(--blue);
+  outline-offset: 3px;
+  outline-color: var(--blue);
+}
+
+/* Botão menu mobile */
+#menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Conteúdo principal */
+main {
+  margin: 0 auto 4rem;
+  border-top: 1px solid var(--light-gray);
+}
+
+/* Seções */
+
+.main-header {
+  margin-bottom: 40px;
+}
+
+.h1-title {
+  color: var(--white);
+  padding: 40px 0;
+  text-transform: uppercase;
+  font-size: 3.2rem;
+}
+
+section {
+  margin-bottom: 4.5rem;
+  opacity: 0;
+  transform: translateY(15px);
+  animation-fill-mode: forwards;
+  animation-name: fadeSlideIn;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.section-fade {
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateY(15px);
+  animation-name: fadeSlideIn;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.delay-1 {
+  animation-delay: 0.15s;
+}
+.delay-2 {
+  animation-delay: 0.3s;
+}
+.delay-3 {
+  animation-delay: 0.45s;
+}
+.delay-4 {
+  animation-delay: 0.6s;
+}
+.delay-5 {
+  animation-delay: 0.75s;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Títulos */
+h2 {
+  font-size: 2.4rem;
+  border-bottom: 4px solid var(--blue);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--blue);
+  font-weight: 700;
+  user-select: none;
+}
+h3 {
+  font-size: 1.45rem;
+  margin-bottom: 1rem;
+  color: var(--gray);
+  font-weight: 700;
+}
+
+/* Parágrafos e listas */
+p {
+  font-size: 1.18rem;
+  margin-bottom: 1.2rem;
+  color: var(--white);
+  line-height: 1.65;
+}
+ul {
+  list-style-position: inside;
+  margin-bottom: 1.6rem;
+}
+ul li {
+  margin-bottom: 0.9rem;
+  font-size: 1.13rem;
+  color: var(--gray);
+}
+
+/* Highlight */
+.highlight {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* Letras brancas para as listas e labels solicitados */
+.process-list li {
+  color: white !important;
+}
+#equipe ul li {
+  color: white !important;
+}
+form label {
+  color: white !important;
+}
+
+/* Lista serviços */
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* caixas com fundo */
+.service-item {
+  background: var(--white);
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1),
+    0 10px 15px -3px rgba(59, 130, 246, 0.3);
+  flex: 1 1 280px;
+  padding: 28px 22px;
+  border: 3px solid transparent;
+  transition: transform 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease;
+  cursor: pointer;
+  outline-offset: 3px;
+}
+.service-item:hover,
+.service-item:focus {
+  transform: translateY(-8px);
+  border-color: var(--blue);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4),
+    0 14px 25px -5px rgba(59, 130, 246, 0.55);
+  outline: none;
+}
+
+/* Desenvolvimento de Sites com imagem */
+.service-item.dev-sites {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../images/programadores programando 3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
+}
+.service-item.dev-sites h3,
+.service-item.dev-sites p {
+  color: var(--white);
+}
+
+/* Testes de Penetração */
+.service-item.pentest {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+    url("../images/pentesters 3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
+}
+.service-item.pentest h3,
+.service-item.pentest p {
+  color: var(--white);
+}
+
+/* Análise e Correção de Falhas */
+.service-item.analise-falhas {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+    url("../images/Consultores de Segurança da Informação.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
+}
+.service-item.analise-falhas h3,
+.service-item.analise-falhas p {
+  color: var(--white);
+}
+
+/* Prevenção e mitigação de Riscos */
+.service-item.mitigacao-riscos {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+    url("../images/programadores programando 4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
+}
+.service-item.mitigacao-riscos h3,
+.service-item.mitigacao-riscos p {
+  color: var(--white);
+}
+
+/* Consultoria de Segurança */
+.service-item.consultoria-seguranca {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)),
+    url("../images/Consultores de Segurança da Informação 2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
+}
+.service-item.consultoria-seguranca h3,
+.service-item.consultoria-seguranca p {
+  color: var(--white);
+}
+
+/* Fundo personalizado para a seção "Desafios que Enfrentamos" */
+.challenges.equipe-fundo {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/equipe desenvolvedores.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 14px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+  padding: 40px 50px;
+  color: var(--white);
+}
+
+/* Cor branca para itens da lista na seção desafios */
+.challenges.equipe-fundo ul li {
+  color: var(--white);
+}
+
+/* Processo */
+.process-list {
+  margin-left: 28px;
+  margin-bottom: 20px;
+}
+
+/* Botão */
+.btn-primary {
+  background-color: var(--blue);
+  color: white;
+  padding: 16px 42px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.18rem;
+  cursor: pointer;
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
+  display: inline-block;
+  font-family: var(--display);
+  margin-top: 25px;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--dark-blue);
+  box-shadow: 0 0 13px var(--dark-blue);
+  outline: none;
+}
+
+/* Formulário */
+form {
+  /* deixar branco */
+  /* background-color: var(--gray;
+  padding: 20px;
+  border-radius: 12px; */
+}
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: white !important;
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 26px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 2px solid var(--light);
+  transition: border-color 0.35s ease;
+  color: var(--gray);
+  background-color: var(--white);
+}
+form input::placeholder,
+form textarea::placeholder {
+  color: var(--light-gray);
+}
+form input:focus,
+form textarea:focus {
+  border-color: var(--blue);
+  outline: none;
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--gray);
+  color: var(--light);
+  text-align: center;
+  padding: 25px 20px;
+  font-size: 1rem;
+  box-shadow: 0 -3px 14px rgba(30, 41, 59, 0.7);
+  user-select: none;
+}
+
+/* Responsividade */
+@media (max-width: 990px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+    display: none; /* padrão escondido */
+    width: 100%;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 1.1rem;
+    margin-left: 0;
+  }
+
+  .h1-title {
+    font-size: 2rem;
+  }
+
+  .services-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  /* Ajustes fundo no cel */
+  .challenges.equipe-fundo {
+    padding: 25px 20px;
+  }
+}
